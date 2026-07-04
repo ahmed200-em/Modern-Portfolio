@@ -1,0 +1,246 @@
+/* =========================================================
+   Ahmed Elmakrini — Portfolio
+   Animations & Scroll Reveal
+   ========================================================= */
+
+/* ---------- Reveal animations ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Variants */
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition:
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+.reveal-right {
+
+  opacity: 0;
+  transform: translateX(40px);
+  transition:
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.9);
+  transition:
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-scale.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Staggered children helper */
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-stagger.visible > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-stagger.visible > *:nth-child(1) {
+  transition-delay: 0.05s;
+}
+.reveal-stagger.visible > *:nth-child(2) {
+  transition-delay: 0.15s;
+}
+.reveal-stagger.visible > *:nth-child(3) {
+  transition-delay: 0.25s;
+}
+.reveal-stagger.visible > *:nth-child(4) {
+  transition-delay: 0.35s;
+}
+.reveal-stagger.visible > *:nth-child(5) {
+  transition-delay: 0.45s;
+}
+.reveal-stagger.visible > *:nth-child(6) {
+  transition-delay: 0.55s;
+}
+.reveal-stagger.visible > *:nth-child(7) {
+  transition-delay: 0.65s;
+}
+.reveal-stagger.visible > *:nth-child(8) {
+  transition-delay: 0.75s;
+}
+
+/* ---------- Hover micro-interactions ---------- */
+.tilt-on-hover {
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.tilt-on-hover:hover {
+  transform: perspective(800px) rotateY(-3deg) rotateX(2deg) translateY(-6px);
+}
+
+/* ---------- Animated gradient text ---------- */
+.gradient-text-animated {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6, #06b6d4, #6366f1);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-shift 6s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* ---------- Glowing border effect ---------- */
+.glow-on-hover {
+  position: relative;
+  isolation: isolate;
+}
+
+.glow-on-hover::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: var(--accent-gradient);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s var(--ease);
+  z-index: -1;
+}
+
+.glow-on-hover:hover::before {
+  opacity: 1;
+}
+
+/* ---------- Floating animation variants ---------- */
+@keyframes drift-slow {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  33% {
+    transform: translate(30px, -20px);
+  }
+  66% {
+    transform: translate(-20px, 20px);
+  }
+}
+
+.drift-slow {
+  animation: drift-slow 12s ease-in-out infinite;
+}
+
+/* ---------- Shimmer effect for placeholders ---------- */
+.shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    110deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.04) 50%,
+    transparent 70%
+  );
+  animation: shimmer 3s linear infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* ---------- Fade in up (one-shot) ---------- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s var(--ease) both;
+}
+
+/* ---------- Section ambient glow ---------- */
+.section-glow {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.section-glow.glow-1 {
+  background: var(--accent-1);
+  top: 10%;
+  left: -200px;
+}
+.section-glow.glow-2 {
+  background: var(--accent-2);
+  top: 40%;
+  right: -200px;
+}
+.section-glow.glow-3 {
+  background: var(--accent-3);
+  bottom: 10%;
+  left: 30%;
+}
