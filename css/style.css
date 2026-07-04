@@ -331,6 +331,7 @@ section {
 .nav-toggle.active span:nth-child(3) {
   transform: translateY(-7px) rotate(-45deg);
 }
+
 /* todo the loading screen style  */
 .loader {
   position: fixed;
@@ -1020,6 +1021,7 @@ section {
   margin-bottom: var(--s-2);
   font-family: var(--font-mono);
 }
+
 /* todo this is the projects section style  */
 .projects-grid {
   display: grid;
@@ -1294,7 +1296,6 @@ section {
   font-size: 0.92rem;
   line-height: 1.65;
 }
-/* ---------- Experience Section ---------- */
 .experience-card {
   max-width: 800px;
   margin: 0 auto;
@@ -1337,4 +1338,91 @@ section {
   line-height: 1.8;
   max-width: 600px;
   margin: 0 auto;
+}
+
+/* todo the github section style  */
+.github-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s-4);
+}
+
+.gh-card {
+  padding: var(--s-5);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--r-lg);
+  backdrop-filter: blur(20px);
+  transition: all var(--t-base) var(--ease);
+  position: relative;
+  overflow: hidden;
+}
+
+.gh-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-hover);
+}
+
+.gh-card-title {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: var(--s-4);
+  color: var(--text-primary);
+}
+
+.gh-card-title svg {
+  color: var(--accent-2);
+}
+
+.gh-placeholder {
+  background: var(--bg-secondary);
+  border: 1px dashed var(--border-color);
+  border-radius: var(--r-md);
+  padding: var(--s-6) var(--s-4);
+  text-align: center;
+  color: var(--text-tertiary);
+  font-size: 0.85rem;
+  font-family: var(--font-mono);
+}
+
+.gh-placeholder code {
+  display: block;
+  margin-top: var(--s-2);
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  word-break: break-all;
+}
+
+.gh-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--s-3);
+  margin-top: var(--s-3);
+}
+
+.gh-stat {
+  text-align: center;
+  padding: var(--s-3);
+  background: var(--bg-secondary);
+  border-radius: var(--r-md);
+}
+
+.gh-stat-num {
+  font-size: 1.4rem;
+  font-weight: 700;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gh-stat-label {
+  font-size: 0.72rem;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: 2px;
 }
