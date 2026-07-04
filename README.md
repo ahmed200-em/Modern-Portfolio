@@ -4,7 +4,7 @@
 
 ### A modern, responsive, and animated developer portfolio built with HTML, CSS & JavaScript.
 
-[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-Visit_Portfolio-6C63FF?style=for-the-badge)](YOUR_PORTFOLIO_URL)
+[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-Visit_Portfolio-6C63FF?style=for-the-badge)](https://modern-portfolio-q7ouwj0lj-ahmed200-ems-projects.vercel.app/)
 [![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)]
 [![HTML](https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=html5&logoColor=white)]
 [![CSS](https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=css3&logoColor=white)]
@@ -215,23 +215,15 @@ or use VS Code Live Server.
 
 ---
 
-# 📷 Screenshot
-
-<p align="center">
-<img src="assets/portfolio.png" width="100%">
-</p>
-
----
-
 # 👨‍💻 Author
 
 **Ahmed Elmakrini**
 
 Future Full-Stack Developer
 
-- 🌐 Portfolio: YOUR_PORTFOLIO_URL
-- 💼 LinkedIn: YOUR_LINKEDIN_URL
-- 📧 Email: YOUR_EMAIL
+- 🌐 Portfolio: https://modern-portfolio-q7ouwj0lj-ahmed200-ems-projects.vercel.app/
+- 💼 LinkedIn: https://www.linkedin.com/in/ahmed-elmakrini
+- 📧 Email: aelmakrini2003@gmail.com
 
 ---
 
