@@ -402,7 +402,7 @@ section {
   }
 }
 
- /* ? btns tyle  */
+/* ? btns tyle  */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -732,7 +732,7 @@ section {
   }
 }
 
- /* Glass card utility   */
+/* Glass card utility   */
 .glass {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
@@ -904,4 +904,119 @@ section {
 }
 .code-body .var {
   color: #ffa657;
+}
+
+/* todo this is the skills section style  */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--s-4);
+}
+
+.skill-card {
+  position: relative;
+  padding: var(--s-5);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--r-lg);
+  backdrop-filter: blur(20px);
+  transition: all var(--t-base) var(--ease);
+  overflow: hidden;
+}
+
+.skill-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--accent-gradient-soft);
+  opacity: 0;
+  transition: opacity var(--t-base) var(--ease);
+  pointer-events: none;
+}
+
+.skill-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-lg);
+}
+
+.skill-card:hover::before {
+  opacity: 1;
+}
+
+.skill-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.skill-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--r-md);
+  display: grid;
+  place-items: center;
+  background: var(--accent-gradient-soft);
+  border: 1px solid var(--border-color);
+  color: var(--accent-2);
+  margin-bottom: var(--s-4);
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: var(--font-mono);
+}
+
+.skill-icon.html {
+  color: #ff6b35;
+}
+.skill-icon.css {
+  color: #2196f3;
+}
+.skill-icon.js {
+  color: #f7df1e;
+}
+.skill-icon.py {
+  color: #3776ab;
+}
+.skill-icon.git {
+  color: #f05032;
+}
+.skill-icon.gh {
+  color: #fff;
+}
+
+.skill-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: var(--s-2);
+}
+
+.skill-desc {
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  margin-bottom: var(--s-4);
+  line-height: 1.5;
+}
+
+.skill-progress {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: var(--r-full);
+  overflow: hidden;
+}
+
+.skill-progress-bar {
+  height: 100%;
+  width: 0%;
+  background: var(--accent-gradient);
+  border-radius: var(--r-full);
+  transition: width 1.4s var(--ease);
+  box-shadow: 0 0 12px rgba(139, 92, 246, 0.5);
+}
+
+.skill-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  color: var(--text-tertiary);
+  margin-bottom: var(--s-2);
+  font-family: var(--font-mono);
 }
