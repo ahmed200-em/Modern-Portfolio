@@ -1163,3 +1163,178 @@ section {
   display: flex;
   gap: var(--s-2);
 }
+
+/* todo this is the education section and the timeline  style  */
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-left: var(--s-7);
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 20px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    var(--accent-2),
+    var(--accent-1),
+    transparent
+  );
+}
+.timeline-location {
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  margin: 0.7rem 0;
+}
+
+.timeline-location i {
+  color: var(--accent-blue);
+  margin-right: 0.5rem;
+}
+.timeline-subjects {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.timeline-subjects li {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+.timeline-subjects i {
+  color: var(--accent-blue);
+  margin-right: 0.5rem;
+  font-size: var(--font-size-xs);
+}
+.timeline-item {
+  position: relative;
+  padding-bottom: var(--s-7);
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -35px;
+  top: 50px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--bg-primary);
+  border: 3px solid var(--accent-2);
+  box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.15);
+}
+
+.timeline-dot.current {
+  background: var(--accent-2);
+  animation: pulse-ring 2s ease-in-out infinite;
+}
+
+@keyframes pulse-ring {
+  0%,
+  100% {
+    box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(139, 92, 246, 0.05);
+  }
+}
+
+.timeline-content {
+  padding: var(--s-5);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--r-lg);
+  backdrop-filter: blur(20px);
+  transition: all var(--t-base) var(--ease);
+}
+
+.timeline-content:hover {
+  border-color: var(--border-hover);
+  transform: translateX(6px);
+}
+
+.timeline-period {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--accent-2);
+  font-family: var(--font-mono);
+  padding: 0.3rem 0.7rem;
+  background: var(--accent-gradient-soft);
+  border-radius: var(--r-full);
+  margin-bottom: var(--s-3);
+}
+
+.timeline-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: var(--s-1);
+}
+
+.timeline-subtitle {
+  color: var(--accent-3);
+  font-size: 0.92rem;
+  font-weight: 500;
+  margin-bottom: var(--s-3);
+}
+
+.timeline-desc {
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+/* ---------- Experience Section ---------- */
+.experience-card {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--s-7);
+  text-align: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--r-xl);
+  backdrop-filter: blur(20px);
+  position: relative;
+  overflow: hidden;
+}
+
+.experience-card::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: var(--accent-gradient);
+  border-radius: var(--r-xl);
+  z-index: -1;
+  opacity: 0.3;
+  filter: blur(20px);
+}
+
+.experience-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--r-lg);
+  background: var(--accent-gradient-soft);
+  border: 1px solid var(--border-color);
+  display: grid;
+  place-items: center;
+  margin: 0 auto var(--s-4);
+  color: var(--accent-2);
+}
+
+.experience-text {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  max-width: 600px;
+  margin: 0 auto;
+}
