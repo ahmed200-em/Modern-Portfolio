@@ -184,13 +184,13 @@ The website has been optimized for:
 Clone the repository:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/portfolio.git
+git clone https://github.com/ahmed200-em/Modern-Portfolio
 ```
 
 Navigate to the project:
 
 ```bash
-cd portfolio
+cd Modern-Portfolio
 ```
 
 Open:
