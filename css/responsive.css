@@ -302,3 +302,13 @@ body {
     bottom: max(var(--s-4), env(safe-area-inset-bottom));
   }
 }
+@media (pointer: coarse) {
+  .github-terminal .github-terminal__prompt button,
+  .github-terminal .github-terminal__commands button {
+    min-height: 44px;
+  }
+
+  .github-terminal #terminal-input {
+    font-size: 16px;
+  }
+}

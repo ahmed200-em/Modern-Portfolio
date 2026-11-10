@@ -1226,44 +1226,58 @@
               </div>
             </article>
 
-            <article class="gh-card reveal-right glow-on-hover">
-              <h3 class="gh-card-title">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  aria-hidden="true"
+            <article class="github-terminal reveal-left glow-on-hover" aria-labelledby="terminal-title">
+              <header class="github-terminal__header">
+                <span class="github-terminal__dots" aria-hidden="true">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </span>
+                <h3 id="terminal-title">GitHub Terminal</h3>
+              </header>
+
+              <div class="github-terminal__body">
+                <div
+                  class="github-terminal__output"
+                  id="terminal-output"
+                  role="log"
+                  aria-label="Terminal output"
+                  tabindex="0"
                 >
-                  <path d="M3 3v18h18" />
-                  <path d="M7 14l4-4 4 4 5-5" />
-                </svg>
-                Contribution Graph
-              </h3>
-              <div class="gh-placeholder">
-                <div>📈 Contribution Graph</div>
-                <code
-                  ><img
-                    src="https://github-readme-activity-graph.vercel.app/graph?username=ahmed200-em&theme=tokyo-night&hide_border=true&bg_color=00000001"
-                    alt="Activity Graph"
-                /></code>
-              </div>
-              <div class="gh-stats">
-                <div class="gh-stat">
-                  <div class="gh-stat-num">5+</div>
-                  <div class="gh-stat-label">Streak Days</div>
+                  <p>
+                    Welcome to my portfolio. Type <strong>help</strong> or
+                    choose a command below.
+                  </p>
                 </div>
-                <div class="gh-stat">
-                  <div class="gh-stat-num">★ 4</div>
-                  <div class="gh-stat-label">Stars</div>
-                </div>
-                <div class="gh-stat">
-                  <div class="gh-stat-num">2</div>
-                  <div class="gh-stat-label">Followers</div>
+
+                <form class="github-terminal__prompt" id="terminal-form">
+                  <label for="terminal-input">
+                    <span aria-hidden="true">ahmed@portfolio:~$</span>
+                    <span class="github-terminal__sr-only"
+                      >Terminal command</span
+                    >
+                  </label>
+                  <input
+                    id="terminal-input"
+                    type="text"
+                    placeholder="help"
+                    autocomplete="off"
+                    autocapitalize="off"
+                    spellcheck="false"
+                  />
+                  <button type="submit">Run</button>
+                </form>
+
+                <div
+                  class="github-terminal__commands"
+                  role="group"
+                  aria-label="Quick commands"
+                >
+                  <button type="button" data-command="help">help</button>
+                  <button type="button" data-command="repos">repos</button>
+                  <button type="button" data-command="stack">stack</button>
+                  <button type="button" data-command="latest">latest</button>
+                  <button type="button" data-command="clear">clear</button>
                 </div>
               </div>
             </article>
@@ -1561,5 +1575,6 @@
     <script src="js/particles.js" defer></script>
     <script src="js/animations.js" defer></script>
     <script src="js/main.js" defer></script>
+    <script src="js/GithubTerminal.js" defer></script>
   </body>
 </html>

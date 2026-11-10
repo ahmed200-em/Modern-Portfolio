@@ -1349,9 +1349,18 @@ section {
 
 .gh-card {
   padding: var(--s-5);
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  border-radius: var(--r-lg);
+  /* background: var(--bg-card); */
+  border: 1px solid #34446c;
+  border-radius: 16px;
+  background: #0d1528;
+  color: #e2e8ff;
+  font:
+    14px/1.6 ui-monospace,
+    Consolas,
+    monospace;
+  text-align: left;
+  /* border: 1px solid var(--border-color); */
+  /* border-radius: var(--r-lg); */
   backdrop-filter: blur(20px);
   transition: all var(--t-base) var(--ease);
   position: relative;
@@ -1426,6 +1435,178 @@ section {
   letter-spacing: 0.1em;
   margin-top: 2px;
 }
+article.github-terminal {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid #34446c;
+  border-radius: 16px;
+  background: #0d1528;
+  color: #e2e8ff;
+  font:
+    14px/1.6 ui-monospace,
+    Consolas,
+    monospace;
+  text-align: left;
+  height:100%;
+}
+
+.github-terminal .github-terminal__header {
+  position: static;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+  margin: 0;
+  padding: 12px 16px;
+  border-bottom: 1px solid #34446c;
+  background: #18223b;
+}
+
+.github-terminal .github-terminal__header h3 {
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+  font-weight: 600;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+.github-terminal .github-terminal__dots {
+  display: flex;
+  flex-shrink: 0;
+  gap: 5px;
+}
+
+.github-terminal .github-terminal__dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #f87171;
+}
+
+.github-terminal .github-terminal__dots span:nth-child(2) {
+  background: #fbbf24;
+}
+
+.github-terminal .github-terminal__dots span:nth-child(3) {
+  background: #34d399;
+}
+
+.github-terminal .github-terminal__body {
+  padding: 16px;
+}
+
+.github-terminal .github-terminal__output {
+  height: 19rem;
+  overflow-y: auto;
+  overflow-wrap: anywhere;
+  padding-right: 8px;
+}
+
+.github-terminal .github-terminal__output p {
+  margin: 0 0 6px;
+  color: inherit;
+  font: inherit;
+}
+
+.github-terminal .github-terminal__output a {
+  color: #93c5fd;
+  text-decoration: underline;
+}
+
+.github-terminal .github-terminal__output .github-terminal__echo,
+.github-terminal .github-terminal__prompt label {
+  color: #86efac;
+}
+
+.github-terminal .github-terminal__prompt,
+.github-terminal .github-terminal__commands {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+}
+
+.github-terminal .github-terminal__prompt {
+  margin: 0;
+  padding: 12px 0;
+  border: 0;
+  border-top: 1px solid #34446c;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.github-terminal .github-terminal__prompt label {
+  margin: 0;
+  font: inherit;
+}
+
+.github-terminal #terminal-input {
+  flex: 1 1 75px;
+  width: auto;
+  min-width: 0;
+  margin: 0;
+  padding: 5px;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  box-shadow: none;
+  color: inherit;
+  font: inherit;
+}
+
+.github-terminal #terminal-input::placeholder {
+  color: #94a3b8;
+  opacity: 1;
+}
+
+.github-terminal .github-terminal__prompt button,
+.github-terminal .github-terminal__commands button {
+  appearance: none;
+  width: auto;
+  margin: 0;
+  padding: 5px 11px;
+  border: 1px solid #465880;
+  border-radius: 7px;
+  background: #18223b;
+  box-shadow: none;
+  color: inherit;
+  font: inherit;
+  letter-spacing: normal;
+  text-transform: none;
+  cursor: pointer;
+}
+
+.github-terminal .github-terminal__prompt button:hover,
+.github-terminal .github-terminal__commands button:hover {
+  background: #283b64;
+}
+
+.github-terminal :focus-visible {
+  outline: 2px solid #93c5fd;
+  outline-offset: 2px;
+}
+
+.github-terminal .github-terminal__sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.github-grid > .github-terminal {
+  grid-column: 2;
+}
+
+
 
 /* todo contact section style  */
 .contact-grid {
@@ -1665,7 +1846,7 @@ section {
   height: 20px;
 }
 
- /* ? Scroll progress bar style  */
+/* ? Scroll progress bar style  */
 .scroll-progress {
   position: fixed;
   top: 0;

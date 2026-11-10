@@ -114,7 +114,9 @@
         if (status) {
           status.style.color = "#22c55e";
           status.textContent =
-            "✓ Thanks " + name + "! Your message has been sent. I will reply soon.";
+            "✓ Thanks " +
+            name +
+            "! Your message has been sent. I will reply soon.";
         }
         form.reset();
         submitBtn.innerHTML = originalText;
