@@ -157,7 +157,7 @@
 
   /* GitHub */
   .gh-stats {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
     gap: var(--s-2);
   }
   .gh-stat-num {
@@ -302,13 +302,83 @@ body {
     bottom: max(var(--s-4), env(safe-area-inset-bottom));
   }
 }
-@media (pointer: coarse) {
-  .github-terminal .github-terminal__prompt button,
-  .github-terminal .github-terminal__commands button {
-    min-height: 44px;
+/* GitHub section layout */
+#github .github-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+}
+
+#github .github-grid > * {
+  min-width: 0;
+}
+
+/* Give the terminal its own row on desktop and mobile. */
+#github .github-grid > .github-terminal {
+  grid-column: 1 / -1;
+  width: 100%;
+}
+
+#github .gh-card img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-inline: auto;
+}
+
+/* Put the path above the input so long repo names can wrap. */
+#github .github-terminal .github-terminal__prompt {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
+#github .github-terminal .github-terminal__prompt label {
+  grid-column: 1 / -1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+#github .github-terminal #terminal-input {
+  width: 100%;
+  min-width: 0;
+}
+
+#github .github-terminal .github-terminal__commands {
+  flex-wrap: wrap;
+}
+
+#github .github-terminal .github-terminal__output {
+  overflow: auto;
+  overflow-wrap: anywhere;
+}
+
+#github .github-terminal .github-terminal__file {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 1024px) {
+  #github .github-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  #github .github-terminal .github-terminal__body {
+    padding: 12px;
   }
 
-  .github-terminal #terminal-input {
+  #github .github-terminal #terminal-input {
+    min-height: 44px;
     font-size: 16px;
+  }
+
+  #github .github-terminal button {
+    min-height: 44px;
+  }
+}
+
+@media (max-width: 480px) {
+  #github .gh-stats {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
